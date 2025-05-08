@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pitmaster's Secret - Authentic Texas-style Smokehouse Experience</title>
+    <meta name="description" content="The Pitmaster's Secret - Authentic Texas-style smokehouse serving mouth-watering brisket, ribs, pulled pork and homestyle sides since 1985. Visit us in BBQ Town or order online.">
+    <meta name="keywords" content="BBQ, barbecue, smoked meats, brisket, ribs, pulled pork, Texas BBQ, restaurant, BBQ Town">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="The Pitmaster's Secret - Authentic Smokehouse Experience">
+    <meta property="og:description" content="Mouth-watering, slow-smoked meats and homestyle sides that will transport you to BBQ heaven.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+    <meta property="og:url" content="https://pitmasterssecret.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Pitmaster's Secret - Authentic Smokehouse Experience">
+    <meta name="twitter:description" content="Mouth-watering, slow-smoked meats and homestyle sides that will transport you to BBQ heaven.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://pitmasterssecret.com">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fdfaf6;
+            color: #333;
+        }
+        .brand-font {
+            font-family: 'Permanent Marker', cursive;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .menu-item {
+            transition: transform 0.3s ease;
+            opacity: 0;
+        }
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+        .chatbot-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+        }
+        .chatbot-container {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 350px;
+            height: 500px;
+            z-index: 99;
+            display: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .chat-header {
+            background-color: #e25822;
+            padding: 15px;
+            color: white;
+            font-weight: bold;
+        }
+        .chat-messages {
+            height: 370px;
+            overflow-y: auto;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+        .chat-input {
+            padding: 10px;
+            background-color: white;
+            border-top: 1px solid #eee;
+        }
+        .message {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+        .user-message {
+            background-color: #e25822;
+            color: white;
+            margin-left: auto;
+        }
+        .bot-message {
+            background-color: #eee;
+        }
+        .section-title {
+            position: relative;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background-color: #e25822;
+        }
+        .bbq-primary {
+            background-color: #e25822;
+        }
+        .bbq-primary-text {
+            color: #e25822;
+        }
+        .bbq-secondary {
+            background-color: #5c2c06;
+        }
+        .bbq-secondary-text {
+            color: #5c2c06;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .button-hover-animation {
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .button-hover-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+        .button-hover-animation:hover::before {
+            left: 100%;
+        }
+        .pulse {
+            animation: pulse-animation 2s infinite;
+        }
+        @keyframes pulse-animation {
+            0% {
+                box-shadow: 0 0 0 0px rgba(226, 88, 34, 0.7);
+            }
+            100% {
+                box-shadow: 0 0 0 20px rgba(226, 88, 34, 0);
+            }
+        }
+        .animate-background {
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .loading-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .loading-logo {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 3rem;
+            color: #e25822;
+            margin-bottom: 1rem;
+        }
+        .loading-bar {
+            width: 200px;
+            height: 6px;
+            background-color: #f3f3f3;
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+        .loading-progress {
+            position: absolute;
+            height: 100%;
+            width: 0%;
+            background-color: #e25822;
+            border-radius: 3px;
+        }
+        .gallery-item {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        .testimonial-card {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        .mobile-menu {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            z-index: 40;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="pt-16">
+    <!-- Loading Screen -->
+    <div class="loading-container" id="loading-screen">
+        <div class="loading-logo">The Pitmaster's Secret</div>
+        <div class="loading-bar">
+            <div class="loading-progress" id="loading-progress"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="brand-font text-3xl bbq-primary-text" id="brand-logo">The Pitmaster's Secret</div>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="font-medium hover:text-red-600 transition-colors nav-item">Home</a>
+                    <a href="#about" class="font-medium hover:text-red-600 transition-colors nav-item">Our Story</a>
+                    <a href="#menu" class="font-medium hover:text-red-600 transition-colors nav-item">Menu</a>
+                    <a href="#location" class="font-medium hover:text-red-600 transition-colors nav-item">Location</a>
+                    <a href="#gallery" class="font-medium hover:text-red-600 transition-colors nav-item">Gallery</a>
+                    <a href="#contact" class="font-medium hover:text-red-600 transition-colors nav-item">Contact</a>
+                    <a href="#order" class="bg-red-600 text-white px-4 py-2 rounded-md font-medium hover:bg-red-700 transition-colors button-hover-animation">Order Now</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-800">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu hidden py-4 px-4" id="mobile-menu">
+        <div class="flex flex-col space-y-4">
+            <a href="#home" class="font-medium hover:text-red-600 transition-colors">Home</a>
+            <a href="#about" class="font-medium hover:text-red-600 transition-colors">Our Story</a>
+            <a href="#menu" class="font-medium hover:text-red-600 transition-colors">Menu</a>
+            <a href="#location" class="font-medium hover:text-red-600 transition-colors">Location</a>
+            <a href="#gallery" class="font-medium hover:text-red-600 transition-colors">Gallery</a>
+            <a href="#contact" class="font-medium hover:text-red-600 transition-colors">Contact</a>
+            <a href="#order" class="bg-red-600 text-white px-4 py-2 rounded-md font-medium hover:bg-red-700 transition-colors text-center">Order Now</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white text-center py-20 animate-background">
+        <div class="container mx-auto px-4">
+            <h1 class="brand-font text-5xl md:text-7xl mb-6 fade-in" id="hero-title">The Pitmaster's Secret</h1>
+            <p class="text-xl md:text-2xl mb-8 fade-in" id="hero-subtitle">Smokin' Good BBQ Since 1985</p>
+            <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto fade-in" id="hero-text">Experience mouth-watering, slow-smoked meats and homestyle sides that will transport you to BBQ heaven.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#menu" class="bg-red-600 text-white px-8 py-3 rounded-md font-medium hover:bg-red-700 transition-colors button-hover-animation fade-in" id="hero-btn-1">View Menu</a>
+                <a href="#order" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-medium hover:bg-white hover:text-gray-900 transition-colors button-hover-animation fade-in" id="hero-btn-2">Order Online</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl brand-font text-center section-title">Our Story</h2>
+            <div class="flex flex-col md:flex-row items-center gap-10 mt-10">
+                <div class="md:w-1/2 fade-in" id="about-img">
+                    <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Jerry's BBQ Pitmaster" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4 bbq-secondary-text fade-in" id="about-title">From Backyard to BBQ Legend</h3>
+                    <p class="text-gray-700 mb-4 fade-in" id="about-text-1">Jerry Thompson started his BBQ journey in his backyard in 1985, cooking for family and friends with a simple charcoal grill and a love for traditional smoking techniques.</p>
+                    <p class="text-gray-700 mb-4 fade-in" id="about-text-2">What began as weekend cookouts quickly gained popularity in the neighborhood. Jerry's passion for perfectly smoked meats and signature sauces led him to open his first restaurant in 1992.</p>
+                    <p class="text-gray-700 mb-4 fade-in" id="about-text-3">Today, Jerry's BBQ is a local institution, known for its authentic pit-smoked meats, housemade sauces, and southern hospitality. Our recipes have been perfected over decades, but our commitment remains the same – serving the best BBQ with love in every bite.</p>
+                    <p class="text-gray-700 font-bold italic fade-in" id="about-quote">"Good BBQ takes time, and great BBQ takes passion." - Jerry Thompson</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl brand-font text-center section-title">Our Menu</h2>
+            
+            <!-- Menu Categories -->
+            <div class="flex flex-wrap justify-center gap-4 mb-10 mt-10 fade-in" id="menu-categories">
+                <button class="px-6 py-2 bg-red-600 text-white rounded-full menu-category active button-hover-animation">All</button>
+                <button class="px-6 py-2 bg-gray-200 text-gray-700 rounded-full menu-category button-hover-animation">Smoked Meats</button>
+                <button class="px-6 py-2 bg-gray-200 text-gray-700 rounded-full menu-category button-hover-animation">Sandwiches</button>
+                <button class="px-6 py-2 bg-gray-200 text-gray-700 rounded-full menu-category button-hover-animation">Sides</button>
+                <button class="px-6 py-2 bg-gray-200 text-gray-700 rounded-full menu-category button-hover-animation">Desserts</button>
+                <button class="px-6 py-2 bg-gray-200 text-gray-700 rounded-full menu-category button-hover-animation">Drinks</button>
+            </div>
+            
+            <!-- Menu Items -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8" id="menu-items">
+                <!-- Menu Item 1 - Texas Brisket -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                    <img src="https://amazingribs.com/wp-content/uploads/2015/12/sliced-brisket-scaled.jpg" alt="Texas Brisket" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold">Texas-Style Brisket</h3>
+                            <span class="text-xl font-bold bbq-primary-text">$18.99</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Slow-smoked for 14 hours over oak wood. Served with house sauce, pickles, and onions.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm bg-red-100 text-red-800 px-3 py-1 rounded-full">Signature</span>
+                            <button class="text-red-600 hover:text-red-800">
+                                <i class="fas fa-plus-circle text-xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 2 - Baby Back Ribs -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                    <img src="https://www.thatzestlife.com/wp-content/uploads/2017/08/IMG_5917-2.jpg" alt="Baby Back Ribs" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold">Baby Back Ribs</h3>
+                            <span class="text-xl font-bold bbq-primary-text">$22.99</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Fall-off-the-bone tender ribs, dry rubbed and glazed with our signature sauce. Full rack.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm bg-red-100 text-red-800 px-3 py-1 rounded-full">Popular</span>
+                            <button class="text-red-600 hover:text-red-800">
+                                <i class="fas fa-plus-circle text-xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 3 - Pulled Pork Sandwich -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                    <img src="https://www.thatzestlife.com/wp-content/uploads/2021/04/barbecue-pork-sandwich.jpg" alt="Pulled Pork Sandwich" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold">Pulled Pork Sandwich</h3>
+                            <span class="text-xl font-bold bbq-primary-text">$12.99</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Tender pulled pork piled high on a brioche bun with coleslaw and pickle chips.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm bg-gray-100 text-gray-800 px-3 py-1 rounded-full">Sandwich</span>
+                            <button class="text-red-600 hover:text-red-800">
+                                <i class="fas fa-plus-circle text-xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 4 - Smoked Sausage -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                    <img src="https://outgrilling.com/wp-content/uploads/2022/09/Grilled-Smoked-Sausage-Recipe-picture.jpg" alt="Smoked Sausage" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold">Smoked Sausage Links</h3>
+                            <span class="text-xl font-bold bbq-primary-text">$14.99</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">House-made sausages smoked to perfection. Served with two sides and Texas toast.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm bg-gray-100 text-gray-800 px-3 py-1 rounded-full">Smoked Meats</span>
+                            <button class="text-red-600 hover:text-red-800">
+                                <i class="fas fa-plus-circle text-xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 5 - Smoked Mac & Cheese -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                    <img src="https://heygrillhey.com/wp-content/uploads/2019/04/SmokedMacCheese-10-scaled.jpg" alt="Mac and Cheese" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold">Smoked Mac & Cheese</h3>
+                            <span class="text-xl font-bold bbq-primary-text">$6.99</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Creamy five-cheese blend topped with crispy breadcrumbs and smoked for extra flavor.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm bg-gray-100 text-gray-800 px-3 py-1 rounded-full">Side</span>
+                            <button class="text-red-600 hover:text-red-800">
+                                <i class="fas fa-plus-circle text-xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 6 - Peach Cobbler -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                    <img src="https://images.food52.com/MdXFa5RkHYuTGng1sgQTeCowpsw=/1200x1200/c9bc08d6-d24a-4150-93b3-9b8badb5acc0--TSO_Peach_Cobbler_16x9_2-.jpg" alt="Peach Cobbler" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold">Peach Cobbler</h3>
+                            <span class="text-xl font-bold bbq-primary-text">$7.99</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Warm peach cobbler with a flaky crust, served with vanilla ice cream.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm bg-gray-100 text-gray-800 px-3 py-1 rounded-full">Dessert</span>
+                            <button class="text-red-600 hover:text-red-800">
+                                <i class="fas fa-plus-circle text-xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View Full Menu Button -->
+            <div class="text-center mt-12">
+                <button class="bbq-primary text-white px-8 py-3 rounded-md font-medium hover:bg-red-700 transition-colors button-hover-animation pulse fade-in" id="view-full-menu">View Full Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl brand-font text-center section-title">Find Us</h2>
+            <div class="flex flex-col md:flex-row gap-10 mt-10">
+                <div class="md:w-1/2 fade-in" id="map-container">
+                    <div class="bg-gray-300 h-96 rounded-lg overflow-hidden">
+                        <!-- This would be a Google Map in a real implementation -->
+                        <div class="w-full h-full flex items-center justify-center bg-gray-200">
+                            <div class="text-center">
+                                <i class="fas fa-map-marker-alt text-5xl text-red-600 mb-3"></i>
+                                <p class="text-lg font-medium">Map would appear here</p>
+                                <p class="text-gray-600">123 Smoke Street, BBQ Town</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-6 bbq-secondary-text fade-in" id="location-title">Our Locations</h3>
+                    
+                    <!-- Main Location -->
+                    <div class="mb-8 fade-in" id="location-1">
+                        <h4 class="font-bold text-xl mb-2">Downtown BBQ Town</h4>
+                        <p class="text-gray-700 mb-1"><i class="fas fa-map-marker-alt mr-2 bbq-primary-text"></i> 123 Smoke Street, BBQ Town, TX 75001</p>
+                        <p class="text-gray-700 mb-1"><i class="fas fa-phone-alt mr-2 bbq-primary-text"></i> (555) 123-4567</p>
+                        <p class="text-gray-700 mb-4"><i class="fas fa-envelope mr-2 bbq-primary-text"></i> info@pitmasterssecret.com</p>
+                        <div class="mb-4">
+                            <h5 class="font-bold">Hours:</h5>
+                            <div class="grid grid-cols-2 text-gray-700">
+                                <span>Monday - Thursday</span><span>11am - 9pm</span>
+                                <span>Friday - Saturday</span><span>11am - 11pm</span>
+                                <span>Sunday</span><span>12pm - 8pm</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Second Location -->
+                    <div class="fade-in" id="location-2">
+                        <h4 class="font-bold text-xl mb-2">West Side</h4>
+                        <p class="text-gray-700 mb-1"><i class="fas fa-map-marker-alt mr-2 bbq-primary-text"></i> 456 Brisket Avenue, BBQ Town, TX 75002</p>
+                        <p class="text-gray-700 mb-1"><i class="fas fa-phone-alt mr-2 bbq-primary-text"></i> (555) 987-6543</p>
+                        <p class="text-gray-700 mb-4"><i class="fas fa-envelope mr-2 bbq-primary-text"></i> westside@pitmasterssecret.com</p>
+                        <div>
+                            <h5 class="font-bold">Hours:</h5>
+                            <div class="grid grid-cols-2 text-gray-700">
+                                <span>Monday - Thursday</span><span>11am - 9pm</span>
+                                <span>Friday - Saturday</span><span>11am - 10pm</span>
+                                <span>Sunday</span><span>12pm - 7pm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl brand-font text-center section-title">Gallery</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10" id="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="BBQ Ribs" class="w-full h-64 object-cover rounded-lg shadow-md gallery-item">
+                <img src="https://amazingribs.com/wp-content/uploads/2015/12/sliced-brisket-scaled.jpg" alt="Brisket" class="w-full h-64 object-cover rounded-lg shadow-md gallery-item">
+                <img src="https://www.thatzestlife.com/wp-content/uploads/2017/08/IMG_5917-2.jpg" alt="Ribs closeup" class="w-full h-64 object-cover rounded-lg shadow-md gallery-item">
+                <img src="https://www.thatzestlife.com/wp-content/uploads/2021/04/barbecue-pork-sandwich.jpg" alt="Pulled Pork" class="w-full h-64 object-cover rounded-lg shadow-md gallery-item">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Restaurant interior" class="w-full h-64 object-cover rounded-lg shadow-md gallery-item">
+                <img src="https://heygrillhey.com/wp-content/uploads/2019/04/SmokedMacCheese-10-scaled.jpg" alt="Mac and Cheese" class="w-full h-64 object-cover rounded-lg shadow-md gallery-item">
+                <img src="https://outgrilling.com/wp-content/uploads/2022/09/Grilled-Smoked-Sausage-Recipe-picture.jpg" alt="Smoked Sausage" class="w-full h-64 object-cover rounded-lg shadow-md gallery-item">
+                <img src="https://images.food52.com/MdXFa5RkHYuTGng1sgQTeCowpsw=/1200x1200/c9bc08d6-d24a-4150-93b3-9b8badb5acc0--TSO_Peach_Cobbler_16x9_2-.jpg" alt="Peach Cobbler" class="w-full h-64 object-cover rounded-lg shadow-md gallery-item">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl brand-font text-center section-title">What Customers Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-600">5.0</span>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"The Pitmaster's Secret brisket is the best I've ever had. It's so tender it practically melts in your mouth. Their homemade BBQ sauce is to die for!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center text-gray-600">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-bold">Sarah Johnson</p>
+                            <p class="text-gray-600 text-sm">Local Resident</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-600">5.0</span>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"The ribs are fall-off-the-bone tender and the sides are amazing. Their mac and cheese is my family's favorite. Great service too!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center text-gray-600">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-bold">Michael Rodriguez</p>
+                            <p class="text-gray-600 text-sm">BBQ Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-600">4.5</span>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"We had Jerry's BBQ cater our company event and everyone raved about it! The pulled pork was a crowd favorite and the service was excellent."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center text-gray-600">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-bold">Jennifer Wilson</p>
+                            <p class="text-gray-600 text-sm">Event Planner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Ordering Section -->
+    <section id="order" class="py-20 bg-gray-800 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl brand-font text-center section-title text-white">Order Online</h2>
+            <div class="max-w-2xl mx-auto mt-10">
+                <div class="bg-white p-8 rounded-lg shadow-lg text-gray-800 fade-in" id="order-form">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Quick Order Form</h3>
+                    <form action="https://formspree.io/f/xrgwkpvz" method="POST">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-bold mb-2">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="(555) 123-4567" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="pickup-time" class="block text-gray-700 font-bold mb-2">Pickup Time</label>
+                            <input type="time" id="pickup-time" name="pickup_time" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="location" class="block text-gray-700 font-bold mb-2">Location</label>
+                            <select id="location" name="location" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600" required>
+                                <option value="">Select a Location</option>
+                                <option value="downtown">Downtown BBQ Town</option>
+                                <option value="westside">West Side</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-bold mb-2">Order Type</label>
+                            <div class="flex">
+                                <label class="flex items-center mr-6">
+                                    <input type="radio" name="order_type" value="pickup" class="mr-2" checked>
+                                    <span>Pickup</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="order_type" value="delivery" class="mr-2">
+                                    <span>Delivery</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="special-instructions" class="block text-gray-700 font-bold mb-2">Special Instructions</label>
+                            <textarea id="special-instructions" name="special_instructions" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600" rows="3" placeholder="Any special requests?"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 px-4 bg-red-600 text-white font-bold rounded-md hover:bg-red-700 transition-colors button-hover-animation">Submit Order</button>
+                        <div id="order-form-status" class="mt-4"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl brand-font text-center section-title">Contact Us</h2>
+            <div class="flex flex-col md:flex-row gap-10 mt-10">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-6 bbq-secondary-text fade-in" id="contact-title">Get in Touch</h3>
+                    <p class="text-gray-700 mb-6 fade-in" id="contact-text">Have questions or feedback? We'd love to hear from you! Fill out the form and our team will get back to you as soon as possible.</p>
+                    
+                    <div class="mb-8 fade-in" id="contact-info-1">
+                        <h4 class="font-bold text-lg mb-3">Contact Information</h4>
+                        <p class="text-gray-700 mb-2"><i class="fas fa-phone-alt mr-2 bbq-primary-text"></i> Main: (555) 123-4567</p>
+                        <p class="text-gray-700 mb-2"><i class="fas fa-envelope mr-2 bbq-primary-text"></i> info@pitmasterssecret.com</p>
+                    </div>
+                    
+                    <div class="fade-in" id="contact-info-2">
+                        <h4 class="font-bold text-lg mb-3">Catering Inquiries</h4>
+                        <p class="text-gray-700 mb-2"><i class="fas fa-phone-alt mr-2 bbq-primary-text"></i> (555) 987-6543</p>
+                        <p class="text-gray-700 mb-2"><i class="fas fa-envelope mr-2 bbq-primary-text"></i> catering@pitmasterssecret.com</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <form class="bg-white p-6 rounded-lg shadow-md fade-in" id="contact-form" action="https://formspree.io/f/xrgwkpvz" method="POST">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="contact-name" class="block text-gray-700 font-bold mb-2">Name</label>
+                                <input type="text" id="contact-name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="Your Name" required>
+                            </div>
+                            <div>
+                                <label for="contact-email" class="block text-gray-700 font-bold mb-2">Email</label>
+                                <input type="email" id="contact-email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="your@email.com" required>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="contact-phone" class="block text-gray-700 font-bold mb-2">Phone</label>
+                            <input type="tel" id="contact-phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="(555) 123-4567">
+                        </div>
+                        <div class="mt-6">
+                            <label for="contact-subject" class="block text-gray-700 font-bold mb-2">Subject</label>
+                            <select id="contact-subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600" required>
+                                <option value="">Select a Subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="catering">Catering Quote</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="career">Careers</option>
+                            </select>
+                        </div>
+                        <div class="mt-6">
+                            <label for="contact-message" class="block text-gray-700 font-bold mb-2">Message</label>
+                            <textarea id="contact-message" name="message" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600" rows="4" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        <div class="mt-6">
+                            <button type="submit" class="w-full py-3 px-4 bg-red-600 text-white font-bold rounded-md hover:bg-red-700 transition-colors button-hover-animation">Send Message</button>
+                        </div>
+                        <div id="contact-form-status" class="mt-4"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="md:w-1/3 mb-8 md:mb-0">
+                    <h2 class="brand-font text-3xl mb-4 fade-in" id="footer-brand">The Pitmaster's Secret</h2>
+                    <p class="mb-4 text-gray-400 fade-in" id="footer-text">Authentic Texas-style BBQ served with passion since 1985. Our commitment to quality never wavers.</p>
+                    <div class="flex space-x-4 fade-in" id="footer-social">
+                        <a href="#" class="text-2xl text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-2xl text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-2xl text-gray-400 hover:text-white"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                <div class="md:w-1/3 mb-8 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4 fade-in" id="footer-links-title">Quick Links</h3>
+                    <ul class="space-y-2 fade-in" id="footer-links">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-white">Menu</a></li>
+                        <li><a href="#location" class="text-gray-400 hover:text-white">Locations</a></li>
+                        <li><a href="#order" class="text-gray-400 hover:text-white">Order Online</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Catering</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4 fade-in" id="footer-newsletter-title">Newsletter</h3>
+                    <p class="mb-4 text-gray-400 fade-in" id="footer-newsletter-text">Subscribe to get special offers, free giveaways, and news.</p>
+                    <form class="fade-in" id="footer-form">
+                        <div class="flex">
+                            <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-md focus:outline-none text-gray-900">
+                            <button type="button" class="bg-red-600 px-4 py-2 rounded-r-md hover:bg-red-700 transition-colors button-hover-animation">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-6 text-center text-gray-400 fade-in" id="footer-copyright">
+                <p>&copy; 2023 The Pitmaster's Secret. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <button class="chatbot-button bg-red-600 text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center pulse" id="chatbot-toggle">
+        <i class="fas fa-comments text-2xl"></i>
+    </button>
+    
+    <div class="chatbot-container" id="chatbot">
+        <div class="chat-header flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-robot mr-2"></i>
+                <span>The Pitmaster's Secret Assistant</span>
+            </div>
+            <button id="close-chat" class="text-white">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                <p>👋 Hi there! I'm The Pitmaster's Secret virtual assistant. I can help you with menu information, show images of our dishes, make reservations, or answer any questions about The Pitmaster's Secret!</p>
+            </div>
+            <div class="message bot-message">
+                <p>What can I help you with today?</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <div class="flex">
+                <input type="text" id="user-input" placeholder="Type your message..." class="w-full px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none">
+                <button id="send-message" class="bg-red-600 px-4 py-2 text-white rounded-r-md hover:bg-red-700 transition-colors button-hover-animation">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initial loading animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingProgress = document.getElementById('loading-progress');
+            const loadingScreen = document.getElementById('loading-screen');
+            let progress = 0;
+            
+            const interval = setInterval(() => {
+                progress += 1;
+                loadingProgress.style.width = progress + '%';
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    
+                    // After loading is complete, fade out and remove the loading screen
+                    anime({
+                        targets: loadingScreen,
+                        opacity: 0,
+                        duration: 800,
+                        easing: 'easeInOutQuad',
+                        complete: () => {
+                            loadingScreen.style.display = 'none';
+                            startPageAnimations();
+                        }
+                    });
+                }
+            }, 20);
+            
+            // Simple chatbot functionality
+            const chatbotToggle = document.getElementById('chatbot-toggle');
+            const chatbot = document.getElementById('chatbot');
+            const closeChat = document.getElementById('close-chat');
+            const userInput = document.getElementById('user-input');
+            const sendMessage = document.getElementById('send-message');
+            const chatMessages = document.getElementById('chat-messages');
+
+            // Toggle chatbot with anime.js animation
+            chatbotToggle.addEventListener('click', function() {
+                if (chatbot.style.display === 'block') {
+                    anime({
+                        targets: chatbot,
+                        opacity: 0,
+                        translateY: 20,
+                        duration: 300,
+                        easing: 'easeOutQuad',
+                        complete: function() {
+                            chatbot.style.display = 'none';
+                        }
+                    });
+                } else {
+                    chatbot.style.display = 'block';
+                    chatbot.style.opacity = 0;
+                    anime({
+                        targets: chatbot,
+                        opacity: 1,
+                        translateY: [20, 0],
+                        duration: 400,
+                        easing: 'easeOutQuad'
+                    });
+                }
+            });
+
+            // Close chatbot
+            closeChat.addEventListener('click', function() {
+                anime({
+                    targets: chatbot,
+                    opacity: 0,
+                    translateY: 20,
+                    duration: 300,
+                    easing: 'easeOutQuad',
+                    complete: function() {
+                        chatbot.style.display = 'none';
+                    }
+                });
+            });
+
+            // Send message function
+            function sendUserMessage() {
+                const message = userInput.value.trim();
+                if (message) {
+                    // Add user message
+                    addMessage(message, 'user-message');
+                    userInput.value = '';
+
+                    // Simulate bot response
+                    setTimeout(function() {
+                        const botResponses = [
+                            "Our most popular dish is the Texas-Style Brisket, smoked for 14 hours!",
+                            "We have two locations: Downtown and West Side. Both open 7 days a week.",
+                            "Yes, we offer catering services for events of all sizes!",
+                            "Our homemade BBQ sauce is available for purchase by the bottle.",
+                            "All our meats are smoked on-site using traditional methods.",
+                            "I'd be happy to help you place an order or make a reservation!"
+                        ];
+                        
+                        const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
+                        addMessage(randomResponse, 'bot-message');
+                        
+                        // If message contains "image" or "picture", show image demo
+                        if (message.toLowerCase().includes('image') || message.toLowerCase().includes('picture') || message.toLowerCase().includes('photo') || message.toLowerCase().includes('show me')) {
+                            setTimeout(function() {
+                                addMessage("Here's an image of our famous brisket:", 'bot-message');
+                                addImageMessage("https://amazingribs.com/wp-content/uploads/2015/12/sliced-brisket-scaled.jpg");
+                            }, 800);
+                        }
+                    }, 600);
+                }
+            }
+
+            // Add message to chat with animation
+            function addMessage(text, className) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', className);
+                messageDiv.style.opacity = 0;
+                messageDiv.innerHTML = `<p>${text}</p>`;
+                chatMessages.appendChild(messageDiv);
+                
+                anime({
+                    targets: messageDiv,
+                    opacity: [0, 1],
+                    translateY: [10, 0],
+                    duration: 300,
+                    easing: 'easeOutQuad'
+                });
+                
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            // Add image message to chat with animation
+            function addImageMessage(imageUrl) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', 'bot-message');
+                messageDiv.style.opacity = 0;
+                messageDiv.innerHTML = `<img src="${imageUrl}" alt="Food image" class="w-full h-auto rounded-lg">`;
+                chatMessages.appendChild(messageDiv);
+                
+                anime({
+                    targets: messageDiv,
+                    opacity: [0, 1],
+                    translateY: [10, 0],
+                    duration: 300,
+                    easing: 'easeOutQuad'
+                });
+                
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            // Send message on button click
+            sendMessage.addEventListener('click', sendUserMessage);
+
+            // Send message on Enter key
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendUserMessage();
+                }
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                if (mobileMenu.classList.contains('hidden')) {
+                    // Show menu
+                    mobileMenu.classList.remove('hidden');
+                    anime({
+                        targets: mobileMenu,
+                        opacity: [0, 1],
+                        translateY: [-20, 0],
+                        duration: 300,
+                        easing: 'easeOutQuad'
+                    });
+                } else {
+                    // Hide menu
+                    anime({
+                        targets: mobileMenu,
+                        opacity: [1, 0],
+                        translateY: [0, -20],
+                        duration: 300,
+                        easing: 'easeOutQuad',
+                        complete: function() {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    });
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    anime({
+                        targets: mobileMenu,
+                        opacity: [1, 0],
+                        translateY: [0, -20],
+                        duration: 300,
+                        easing: 'easeOutQuad',
+                        complete: function() {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+            
+            // Menu category selection with animation
+            const menuCategories = document.querySelectorAll('.menu-category');
+            menuCategories.forEach(category => {
+                category.addEventListener('click', function() {
+                    menuCategories.forEach(c => c.classList.remove('bg-red-600', 'text-white'));
+                    menuCategories.forEach(c => c.classList.add('bg-gray-200', 'text-gray-700'));
+                    this.classList.remove('bg-gray-200', 'text-gray-700');
+                    this.classList.add('bg-red-600', 'text-white');
+                    
+                    anime({
+                        targets: this,
+                        scale: [1, 1.1, 1],
+                        duration: 300,
+                        easing: 'easeOutQuad'
+                    });
+                });
+            });
+        });
+        
+        // Animation functions
+        function startPageAnimations() {
+            // Hero section animations
+            animateHeroElements();
+            
+            // Animate section titles when scrolled into view
+            animateSectionTitles();
+            
+            // Animate menu items with staggered timing
+            animateMenuItems();
+            
+            // Animate gallery items
+            animateGalleryItems();
+            
+            // Animate testimonial cards
+            animateTestimonialCards();
+            
+            // Add scroll event listener for additional animations
+            window.addEventListener('scroll', function() {
+                animateOnScroll();
+            });
+            
+            // Logo animation
+            animateLogo();
+            
+            // Animate nav items
+            animateNavItems();
+        }
+        
+        function animateHeroElements() {
+            anime({
+                targets: '#hero-title',
+                opacity: [0, 1],
+                translateY: [50, 0],
+                duration: 1000,
+                easing: 'easeOutQuad',
+            });
+            
+            anime({
+                targets: '#hero-subtitle',
+                opacity: [0, 1],
+                translateY: [30, 0],
+                duration: 1000,
+                delay: 200,
+                easing: 'easeOutQuad',
+            });
+            
+            anime({
+                targets: '#hero-text',
+                opacity: [0, 1],
+                translateY: [30, 0],
+                duration: 1000,
+                delay: 400,
+                easing: 'easeOutQuad',
+            });
+            
+            anime({
+                targets: ['#hero-btn-1', '#hero-btn-2'],
+                opacity: [0, 1],
+                translateY: [30, 0],
+                duration: 800,
+                delay: anime.stagger(200, {start: 600}),
+                easing: 'easeOutQuad',
+            });
+        }
+        
+        function animateSectionTitles() {
+            anime({
+                targets: '.section-title',
+                opacity: [0, 1],
+                translateY: [20, 0],
+                duration: 800,
+                easing: 'easeOutQuad',
+                delay: anime.stagger(100),
+                complete: function() {
+                    // Animate the underline after the title appears
+                    anime({
+                        targets: '.section-title::after',
+                        width: [0, 80],
+                        duration: 800,
+                        easing: 'easeOutQuad',
+                    });
+                }
+            });
+        }
+        
+        function animateMenuItems() {
+            anime({
+                targets: '.menu-item',
+                opacity: [0, 1],
+                translateY: [20, 0],
+                duration: 800,
+                delay: anime.stagger(100, {grid: [3, 2], from: 'center'}),
+                easing: 'easeOutQuad',
+            });
+        }
+        
+        function animateGalleryItems() {
+            anime({
+                targets: '.gallery-item',
+                opacity: [0, 1],
+                scale: [0.8, 1],
+                duration: 800,
+                delay: anime.stagger(50, {grid: [4, 2], from: 'center'}),
+                easing: 'easeOutQuad',
+            });
+        }
+        
+        function animateTestimonialCards() {
+            anime({
+                targets: '.testimonial-card',
+                opacity: [0, 1],
+                translateX: [-30, 0],
+                duration: 800,
+                delay: anime.stagger(200),
+                easing: 'easeOutQuad',
+            });
+        }
+        
+        function animateOnScroll() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    if (element.style.opacity !== '1') {
+                        anime({
+                            targets: element,
+                            opacity: [0, 1],
+                            translateY: [20, 0],
+                            duration: 800,
+                            easing: 'easeOutQuad',
+                        });
+                    }
+                }
+            });
+        }
+        
+        function animateLogo() {
+            anime({
+                targets: '#brand-logo',
+                rotateY: [90, 0],
+                opacity: [0, 1],
+                duration: 1200,
+                easing: 'easeOutQuad',
+            });
+        }
+        
+        function animateNavItems() {
+            anime({
+                targets: '.nav-item',
+                opacity: [0, 1],
+                translateY: [-20, 0],
+                duration: 800,
+                delay: anime.stagger(50),
+                easing: 'easeOutQuad',
+            });
+        }
+    </script>
+</body>
+</html>
