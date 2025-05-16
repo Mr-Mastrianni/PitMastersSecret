@@ -350,7 +350,7 @@
                             <h3 class="text-xl font-bold">Baby Back Ribs</h3>
                             <span class="text-xl font-bold bbq-primary-text">$22.99</span>
                         </div>
-                        <p class="text-gray-600 mb-4">Fall-off-the-bone tender ribs, dry rubbed and glazed with our signature sauce. Full rack.</p>
+                        <p class="text-gray-600 mb-4">Fall-off-the-bone tender ribs, dry rubbed and glazed with our signature rub. Full rack.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-sm bg-red-100 text-red-800 px-3 py-1 rounded-full">Popular</span>
                             <button class="text-red-600 hover:text-red-800">
@@ -443,53 +443,40 @@
     <!-- Location Section -->
     <section id="location" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl brand-font text-center section-title">Find Us</h2>
+            <h2 class="text-4xl brand-font text-center section-title">Service Area</h2>
             <div class="flex flex-col md:flex-row gap-10 mt-10">
                 <div class="md:w-1/2 fade-in" id="map-container">
                     <div class="bg-gray-300 h-96 rounded-lg overflow-hidden">
-                        <!-- This would be a Google Map in a real implementation -->
+                        <!-- Phoenix area image -->
                         <div class="w-full h-full flex items-center justify-center bg-gray-200">
                             <div class="text-center">
                                 <i class="fas fa-map-marker-alt text-5xl text-red-600 mb-3"></i>
-                                <p class="text-lg font-medium">Map would appear here</p>
-                                <p class="text-gray-600">123 Smoke Street, BBQ Town</p>
+                                <p class="text-lg font-medium">Serving the Phoenix Area</p>
+                                <p class="text-gray-600">Delivery available throughout Phoenix</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="md:w-1/2">
-                    <h3 class="text-2xl font-bold mb-6 bbq-secondary-text fade-in" id="location-title">Our Locations</h3>
+                    <h3 class="text-2xl font-bold mb-6 bbq-secondary-text fade-in" id="location-title">Phoenix Area Delivery</h3>
                     
-                    <!-- Main Location -->
                     <div class="mb-8 fade-in" id="location-1">
-                        <h4 class="font-bold text-xl mb-2">Downtown BBQ Town</h4>
-                        <p class="text-gray-700 mb-1"><i class="fas fa-map-marker-alt mr-2 bbq-primary-text"></i> 123 Smoke Street, BBQ Town, TX 75001</p>
-                        <p class="text-gray-700 mb-1"><i class="fas fa-phone-alt mr-2 bbq-primary-text"></i> (555) 123-4567</p>
-                        <p class="text-gray-700 mb-4"><i class="fas fa-envelope mr-2 bbq-primary-text"></i> info@pitmasterssecret.com</p>
+                        <h4 class="font-bold text-xl mb-2">Contact Information</h4>
+                        <p class="text-gray-700 mb-1"><i class="fas fa-phone-alt mr-2 bbq-primary-text"></i> (480) 204-5257</p>
+                        <p class="text-gray-700 mb-4"><i class="fas fa-envelope mr-2 bbq-primary-text"></i> jj.willis@pitmasters-secret.com</p>
                         <div class="mb-4">
-                            <h5 class="font-bold">Hours:</h5>
+                            <h5 class="font-bold">Hours of Operation:</h5>
                             <div class="grid grid-cols-2 text-gray-700">
-                                <span>Monday - Thursday</span><span>11am - 9pm</span>
-                                <span>Friday - Saturday</span><span>11am - 11pm</span>
-                                <span>Sunday</span><span>12pm - 8pm</span>
+                                <span>Monday - Saturday</span><span>8am - 6pm</span>
+                                <span>Sunday</span><span>Closed</span>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Second Location -->
-                    <div class="fade-in" id="location-2">
-                        <h4 class="font-bold text-xl mb-2">West Side</h4>
-                        <p class="text-gray-700 mb-1"><i class="fas fa-map-marker-alt mr-2 bbq-primary-text"></i> 456 Brisket Avenue, BBQ Town, TX 75002</p>
-                        <p class="text-gray-700 mb-1"><i class="fas fa-phone-alt mr-2 bbq-primary-text"></i> (555) 987-6543</p>
-                        <p class="text-gray-700 mb-4"><i class="fas fa-envelope mr-2 bbq-primary-text"></i> westside@pitmasterssecret.com</p>
-                        <div>
-                            <h5 class="font-bold">Hours:</h5>
-                            <div class="grid grid-cols-2 text-gray-700">
-                                <span>Monday - Thursday</span><span>11am - 9pm</span>
-                                <span>Friday - Saturday</span><span>11am - 10pm</span>
-                                <span>Sunday</span><span>12pm - 7pm</span>
-                            </div>
-                        </div>
+                    <div class="fade-in" id="delivery-info">
+                        <h4 class="font-bold text-xl mb-2">Delivery Information</h4>
+                        <p class="text-gray-700 mb-4">We deliver our delicious BBQ throughout the Phoenix metropolitan area. Order online or give us a call to place your order.</p>
+                        <p class="text-gray-700 mb-4">Delivery times may vary depending on your location and current order volume.</p>
                     </div>
                 </div>
             </div>
@@ -610,29 +597,20 @@
                             <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="(555) 123-4567" required>
                         </div>
                         <div class="mb-6">
-                            <label for="pickup-time" class="block text-gray-700 font-bold mb-2">Pickup Time</label>
-                            <input type="time" id="pickup-time" name="pickup_time" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600" required>
+                            <label for="delivery-time" class="block text-gray-700 font-bold mb-2">Delivery Time</label>
+                            <input type="time" id="delivery-time" name="delivery_time" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600" required>
                         </div>
                         <div class="mb-6">
-                            <label for="location" class="block text-gray-700 font-bold mb-2">Location</label>
-                            <select id="location" name="location" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600" required>
-                                <option value="">Select a Location</option>
-                                <option value="downtown">Downtown BBQ Town</option>
-                                <option value="westside">West Side</option>
-                            </select>
+                            <label for="address" class="block text-gray-700 font-bold mb-2">Delivery Address</label>
+                            <input type="text" id="address" name="address" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="Your Address" required>
                         </div>
                         <div class="mb-6">
-                            <label class="block text-gray-700 font-bold mb-2">Order Type</label>
-                            <div class="flex">
-                                <label class="flex items-center mr-6">
-                                    <input type="radio" name="order_type" value="pickup" class="mr-2" checked>
-                                    <span>Pickup</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="order_type" value="delivery" class="mr-2">
-                                    <span>Delivery</span>
-                                </label>
-                            </div>
+                            <label for="city" class="block text-gray-700 font-bold mb-2">City</label>
+                            <input type="text" id="city" name="city" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="Phoenix" required>
+                        </div>
+                        <input type="hidden" name="order_type" value="delivery">
+                        <div class="mb-6">
+                            <p class="text-gray-700"><i class="fas fa-info-circle text-blue-500 mr-2"></i> We deliver throughout the Phoenix metropolitan area.</p>
                         </div>
                         <div class="mb-6">
                             <label for="special-instructions" class="block text-gray-700 font-bold mb-2">Special Instructions</label>
@@ -657,14 +635,14 @@
                     
                     <div class="mb-8 fade-in" id="contact-info-1">
                         <h4 class="font-bold text-lg mb-3">Contact Information</h4>
-                        <p class="text-gray-700 mb-2"><i class="fas fa-phone-alt mr-2 bbq-primary-text"></i> Main: (555) 123-4567</p>
-                        <p class="text-gray-700 mb-2"><i class="fas fa-envelope mr-2 bbq-primary-text"></i> info@pitmasterssecret.com</p>
+                        <p class="text-gray-700 mb-2"><i class="fas fa-phone-alt mr-2 bbq-primary-text"></i> (480) 204-5257</p>
+                        <p class="text-gray-700 mb-2"><i class="fas fa-envelope mr-2 bbq-primary-text"></i> jj.willis@pitmasters-secret.com</p>
                     </div>
                     
                     <div class="fade-in" id="contact-info-2">
                         <h4 class="font-bold text-lg mb-3">Catering Inquiries</h4>
-                        <p class="text-gray-700 mb-2"><i class="fas fa-phone-alt mr-2 bbq-primary-text"></i> (555) 987-6543</p>
-                        <p class="text-gray-700 mb-2"><i class="fas fa-envelope mr-2 bbq-primary-text"></i> catering@pitmasterssecret.com</p>
+                        <p class="text-gray-700 mb-2"><i class="fas fa-phone-alt mr-2 bbq-primary-text"></i> (480) 204-5257</p>
+                        <p class="text-gray-700 mb-2"><i class="fas fa-envelope mr-2 bbq-primary-text"></i> jj.willis@pitmasters-secret.com</p>
                     </div>
                 </div>
                 <div class="md:w-1/2">
