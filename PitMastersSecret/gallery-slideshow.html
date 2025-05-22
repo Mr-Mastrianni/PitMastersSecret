@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slideshow - The Pitmaster's Secret</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        .swiper-container {
+            width: 80%;
+            max-width: 800px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 70vh; /* Limit image height */
+            object-fit: contain; /* Show full image, might leave space */
+            border-radius: 10px;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: #e25822; /* Brand color */
+        }
+        .swiper-pagination-bullet-active {
+            background: #e25822; /* Brand color */
+        }
+        a.back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #e25822;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        a.back-link:hover {
+            background-color: #c04517;
+        }
+        h1 {
+            font-family: 'Permanent Marker', cursive;
+            color: #5c2c06;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gallery Slideshow</h1>
+
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="menu/RIBS.JPG" alt="Baby Back Ribs"></div>
+            <div class="swiper-slide"><img src="menu/RIBS2.jpg" alt="Another View of Ribs"></div>
+            <div class="swiper-slide"><img src="menu/RIBS3.jpg" alt="Another View of Ribs"></div>
+            <div class="swiper-slide"><img src="menu/RIBS4.jpg" alt="Another View of Ribs"></div>
+            <div class="swiper-slide"><img src="menu/RIBS5.jpg" alt="Another View of Ribs"></div>
+            <div class="swiper-slide"><img src="menu/RIBS6.jpg" alt="Another View of Ribs"></div>
+            <div class="swiper-slide"><img src="menu/RIBS7.jpg" alt="Another View of Ribs"></div>
+            <div class="swiper-slide"><img src="menu/RIBS8.jpg" alt="Another View of Ribs"></div>
+            <div class="swiper-slide"><img src="menu/RIBS9.jpg" alt="Another View of Ribs"></div>
+            <div class="swiper-slide"><img src="menu/RIBS10.jpg" alt="Another View of Ribs"></div>
+            <div class="swiper-slide"><img src="menu/RIBSCOMBO.jpeg" alt="Ribs Combo Platter"></div>
+
+            <div class="swiper-slide"><img src="menu/CH1.jpg" alt="Gallery Image 1"></div>
+            <div class="swiper-slide"><img src="menu/CH2.jpg" alt="Gallery Image 2"></div>
+            <div class="swiper-slide"><img src="menu/CH3.jpg" alt="Gallery Image 3"></div>
+            <div class="swiper-slide"><img src="menu/CH4.jpg" alt="Gallery Image 4"></div>
+            <div class="swiper-slide"><img src="menu/CH0.jpg" alt="Chicken Quarters"></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+    <a href="BBQ.HTML" class="back-link">Back to Main Page</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            keyboard: {
+                enabled: true,
+            },
+            autoplay: {
+                delay: 5000, // 5 seconds
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+</body>
+</html>
